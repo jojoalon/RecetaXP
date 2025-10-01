@@ -22,6 +22,7 @@ export class SignUpPage implements OnInit {
   utilsSvc = inject(UtilsService)
 
   ngOnInit() {
+    //Todo:
   }
 
   async submit() {
@@ -30,7 +31,7 @@ export class SignUpPage implements OnInit {
       const loading = await this.utilsSvc.loading()
       await loading.present();
 
-      this.firebaseSvc.sihnUp(this.form.value as User).then(async res => {
+      this.firebaseSvc.signUp(this.form.value as User).then(async res => {
 
         await this.firebaseSvc.updateUser(this.form.value.name);
 
